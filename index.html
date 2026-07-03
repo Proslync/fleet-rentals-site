@@ -5,30 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- ============================================================
        PLACEHOLDERS TO REPLACE (search for "TODO"):
-       1. Business name  — currently "Capital Drive Co." everywhere
-       2. Phone number   — TODO-PHONE
-       3. Email          — TODO-EMAIL
-       4. Turo listing URLs — TODO-TURO-URL-1 / -2 / -3
-       5. Car photos     — img/escalade.jpg, img/gle.jpg (drop real photos in an /img folder)
-       6. Form endpoint  — TODO-FORMSPREE (create free account at formspree.io, paste your form ID)
+       1. Phone number   — TODO-PHONE
+       2. Email          — TODO-EMAIL
+       3. Turo listing URLs — TODO-TURO-URL-1 / -2
+       4. Car photos     — img/escalade.jpg, img/gle.jpg (drop real photos in an /img folder)
+       5. Form endpoint  — TODO-FORMSPREE (create free account at formspree.io, paste your form ID)
+       6. Footer legal name — your LLC
        ============================================================ -->
-  <title>Capital Drive Co. — Luxury SUV Rentals | Tysons, VA · DC Metro</title>
-  <meta name="description" content="Rent a Cadillac Escalade or Mercedes-Benz GLE direct from a local Tysons fleet. Weekly, monthly, and corporate rentals with delivery to Dulles (IAD), Reagan (DCA), and the DC metro." />
+  <title>XO Luxury Rentals — Luxury SUV Rentals | Tysons, VA · DC Metro</title>
+  <meta name="description" content="XO Luxury Rentals — rent a Cadillac Escalade or Mercedes-Benz GLE direct from a local Tysons fleet. Weekly, monthly, and corporate rentals. Delivery to Dulles (IAD), Reagan (DCA), and the DC metro." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            ink: '#0c0d10',
-            panel: '#14161b',
-            line: '#23262e',
-            gold: '#c9a962',
-            fog: '#9aa1ad',
+            ink: '#050505',
+            panel: '#0d0d0e',
+            line: '#232326',
+            xo: '#ffffff',
+            fog: '#8f9096',
           },
           fontFamily: {
-            display: ['Georgia', 'Times New Roman', 'serif'],
-            body: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+            body: ['Helvetica Neue', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Arial', 'sans-serif'],
+          },
+          letterSpacing: {
+            xo: '0.35em',
           },
         },
       },
@@ -38,12 +40,17 @@
     html { scroll-behavior: smooth; }
     .hero-bg {
       background:
-        radial-gradient(ellipse 80% 60% at 70% 20%, rgba(201,169,98,0.10), transparent),
-        radial-gradient(ellipse 60% 50% at 20% 80%, rgba(201,169,98,0.05), transparent),
-        #0c0d10;
+        radial-gradient(ellipse 70% 55% at 50% 0%, rgba(255,255,255,0.07), transparent),
+        radial-gradient(ellipse 50% 40% at 85% 90%, rgba(255,255,255,0.03), transparent),
+        #050505;
+    }
+    .xo-outline {
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,0.14);
+      user-select: none;
     }
     .card-photo {
-      background: linear-gradient(135deg, #1a1d24 0%, #23262e 100%);
+      background: linear-gradient(160deg, #101012 0%, #1a1a1d 100%);
     }
   </style>
 </head>
@@ -52,150 +59,151 @@
   <!-- ============ NAV ============ -->
   <header class="sticky top-0 z-50 border-b border-line bg-ink/90 backdrop-blur">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-      <a href="#top" class="font-display text-xl tracking-wide text-white">
-        Capital <span class="text-gold">Drive</span> Co.
+      <a href="#top" class="flex items-baseline gap-3">
+        <span class="text-2xl font-black tracking-tight text-white">XO</span>
+        <span class="text-[10px] font-semibold uppercase tracking-xo text-fog">Luxury Rentals</span>
       </a>
-      <nav class="hidden gap-8 text-sm text-fog md:flex">
-        <a href="#fleet" class="hover:text-white">Fleet</a>
-        <a href="#direct" class="hover:text-white">Monthly &amp; Corporate</a>
-        <a href="#how" class="hover:text-white">How It Works</a>
-        <a href="#faq" class="hover:text-white">FAQ</a>
+      <nav class="hidden gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-fog md:flex">
+        <a href="#fleet" class="transition hover:text-white">Fleet</a>
+        <a href="#direct" class="transition hover:text-white">Monthly</a>
+        <a href="#how" class="transition hover:text-white">How</a>
+        <a href="#faq" class="transition hover:text-white">FAQ</a>
       </nav>
-      <a href="#book" class="rounded-full bg-gold px-5 py-2 text-sm font-semibold text-ink hover:bg-white transition">
-        Request a Vehicle
+      <a href="#book" class="rounded-none border border-white bg-white px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-black transition hover:bg-transparent hover:text-white">
+        Book
       </a>
     </div>
   </header>
 
   <!-- ============ HERO ============ -->
-  <section id="top" class="hero-bg">
-    <div class="mx-auto max-w-6xl px-5 pb-20 pt-24 text-center md:pt-32">
-      <p class="mb-4 text-xs uppercase tracking-[0.3em] text-gold">Tysons, Virginia · Serving the DC Metro</p>
-      <h1 class="font-display text-4xl leading-tight text-white md:text-6xl">
-        Luxury SUVs, rented direct.<br class="hidden md:block" />
-        No counter. No lines.
+  <section id="top" class="hero-bg relative overflow-hidden">
+    <div aria-hidden="true" class="xo-outline pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 text-[38vw] font-black leading-none md:text-[28rem]">XO</div>
+    <div class="relative mx-auto max-w-6xl px-5 pb-24 pt-28 text-center md:pt-40">
+      <p class="mb-6 text-[10px] font-semibold uppercase tracking-xo text-fog">Tysons, Virginia — DC Metro</p>
+      <h1 class="text-5xl font-black uppercase leading-[0.95] tracking-tight text-white md:text-8xl">
+        Luxury,<br />rented direct.
       </h1>
-      <p class="mx-auto mt-6 max-w-2xl text-lg text-fog">
-        Cadillac Escalade and Mercedes-Benz GLE — delivered to Dulles, Reagan National,
-        your hotel, or your door. Owned and managed by a local Tysons fleet, not a corporation.
+      <p class="mx-auto mt-8 max-w-xl text-base text-fog md:text-lg">
+        Cadillac Escalade. Mercedes-Benz GLE. Delivered to Dulles, Reagan National,
+        your hotel, or your door — day or night. No counter. No lines.
       </p>
-      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a href="#book" class="rounded-full bg-gold px-8 py-3 font-semibold text-ink hover:bg-white transition">
+      <div class="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="#book" class="w-full border border-white bg-white px-10 py-4 text-xs font-bold uppercase tracking-[0.25em] text-black transition hover:bg-transparent hover:text-white sm:w-auto">
           Request Dates
         </a>
-        <a href="#fleet" class="rounded-full border border-line px-8 py-3 font-semibold text-white hover:border-gold hover:text-gold transition">
-          View the Fleet
+        <a href="#fleet" class="w-full border border-line px-10 py-4 text-xs font-bold uppercase tracking-[0.25em] text-white transition hover:border-white sm:w-auto">
+          The Fleet
         </a>
       </div>
-      <div class="mx-auto mt-14 grid max-w-3xl grid-cols-1 gap-3 text-sm text-fog sm:grid-cols-3">
-        <div class="rounded-xl border border-line bg-panel px-4 py-3">✈️ IAD &amp; DCA delivery</div>
-        <div class="rounded-xl border border-line bg-panel px-4 py-3">📅 Weekly &amp; monthly rates</div>
-        <div class="rounded-xl border border-line bg-panel px-4 py-3">🤝 Direct from the owners</div>
+      <div class="mx-auto mt-16 grid max-w-3xl grid-cols-1 gap-px border border-line bg-line text-[11px] font-semibold uppercase tracking-[0.2em] text-fog sm:grid-cols-3">
+        <div class="bg-ink px-4 py-4">IAD &amp; DCA Delivery</div>
+        <div class="bg-ink px-4 py-4">Weekly &amp; Monthly Rates</div>
+        <div class="bg-ink px-4 py-4">Direct From The Owners</div>
       </div>
     </div>
   </section>
 
   <!-- ============ FLEET ============ -->
   <section id="fleet" class="border-t border-line bg-ink">
-    <div class="mx-auto max-w-6xl px-5 py-20">
-      <p class="text-xs uppercase tracking-[0.3em] text-gold">The Fleet</p>
-      <h2 class="mt-2 font-display text-3xl text-white md:text-4xl">Pick your truck.</h2>
+    <div class="mx-auto max-w-6xl px-5 py-24">
+      <p class="text-[10px] font-semibold uppercase tracking-xo text-fog">The Fleet</p>
+      <h2 class="mt-3 text-3xl font-black uppercase tracking-tight text-white md:text-5xl">Pick your truck.</h2>
 
-      <div class="mt-10 grid gap-8 md:grid-cols-2">
+      <div class="mt-12 grid gap-8 md:grid-cols-2">
 
         <!-- Escalade -->
-        <article class="overflow-hidden rounded-2xl border border-line bg-panel">
-          <!-- TODO: replace this div with <img src="img/escalade.jpg" class="h-64 w-full object-cover" alt="Cadillac Escalade"> -->
+        <article class="border border-line bg-panel">
+          <!-- TODO: replace this div with <img src="img/escalade.jpg" class="h-64 w-full object-cover grayscale" alt="Cadillac Escalade"> -->
           <div class="card-photo flex h-64 w-full items-center justify-center text-fog">
-            <span class="text-sm">[ Escalade photo — img/escalade.jpg ]</span>
+            <span class="text-xs uppercase tracking-[0.2em]">[ Escalade — img/escalade.jpg ]</span>
           </div>
-          <div class="p-6">
-            <div class="flex items-start justify-between">
+          <div class="p-7">
+            <div class="flex items-start justify-between gap-4">
               <div>
-                <h3 class="font-display text-2xl text-white">Cadillac Escalade</h3>
-                <p class="mt-1 text-sm text-fog">Full-size luxury · Seats 7 · Captain's chairs · Third row</p>
+                <h3 class="text-2xl font-black uppercase tracking-tight text-white">Cadillac Escalade</h3>
+                <p class="mt-2 text-sm text-fog">Full-size luxury · Seats 7 · Captain's chairs · Third row</p>
               </div>
-              <span class="rounded-full border border-gold/40 px-3 py-1 text-xs text-gold">Flagship</span>
+              <span class="border border-white/40 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">Flagship</span>
             </div>
-            <ul class="mt-4 space-y-1 text-sm text-fog">
-              <li>• Apple CarPlay / Android Auto · premium audio</li>
-              <li>• Fits the whole family + luggage — airport favorite</li>
-              <li>• Weekly and monthly rates available</li>
+            <ul class="mt-5 space-y-1.5 text-sm text-fog">
+              <li>— Apple CarPlay / Android Auto · premium audio</li>
+              <li>— The whole crew plus luggage. The airport favorite.</li>
+              <li>— Weekly and monthly rates available</li>
             </ul>
-            <div class="mt-6 flex flex-wrap gap-3">
-              <a href="#book" class="rounded-full bg-gold px-5 py-2 text-sm font-semibold text-ink hover:bg-white transition">Request Dates</a>
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a href="#book" class="border border-white bg-white px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-black transition hover:bg-transparent hover:text-white">Request Dates</a>
               <!-- TODO-TURO-URL-1: paste your live Turo listing link below -->
-              <a href="#" class="rounded-full border border-line px-5 py-2 text-sm text-white hover:border-gold hover:text-gold transition">Instant-book on Turo →</a>
+              <a href="#" class="border border-line px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition hover:border-white">Instant-Book on Turo</a>
             </div>
           </div>
         </article>
 
         <!-- GLE -->
-        <article class="overflow-hidden rounded-2xl border border-line bg-panel">
-          <!-- TODO: replace this div with <img src="img/gle.jpg" class="h-64 w-full object-cover" alt="Mercedes-Benz GLE 350"> -->
+        <article class="border border-line bg-panel">
+          <!-- TODO: replace this div with <img src="img/gle.jpg" class="h-64 w-full object-cover grayscale" alt="Mercedes-Benz GLE 350"> -->
           <div class="card-photo flex h-64 w-full items-center justify-center text-fog">
-            <span class="text-sm">[ GLE photo — img/gle.jpg ]</span>
+            <span class="text-xs uppercase tracking-[0.2em]">[ GLE — img/gle.jpg ]</span>
           </div>
-          <div class="p-6">
-            <div class="flex items-start justify-between">
+          <div class="p-7">
+            <div class="flex items-start justify-between gap-4">
               <div>
-                <h3 class="font-display text-2xl text-white">Mercedes-Benz GLE 350 4MATIC</h3>
-                <p class="mt-1 text-sm text-fog">Midsize luxury · Seats 5 · All-wheel drive</p>
+                <h3 class="text-2xl font-black uppercase tracking-tight text-white">Mercedes-Benz GLE 350</h3>
+                <p class="mt-2 text-sm text-fog">Midsize luxury · Seats 5 · 4MATIC all-wheel drive</p>
               </div>
-              <span class="rounded-full border border-gold/40 px-3 py-1 text-xs text-gold">Efficient</span>
+              <span class="border border-white/40 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">Daily</span>
             </div>
-            <ul class="mt-4 space-y-1 text-sm text-fog">
-              <li>• The comfortable daily — business trips &amp; long stays</li>
-              <li>• Better fuel economy for extended rentals</li>
-              <li>• Weekly and monthly rates available</li>
+            <ul class="mt-5 space-y-1.5 text-sm text-fog">
+              <li>— The comfortable daily — business trips &amp; long stays</li>
+              <li>— Better fuel economy for extended rentals</li>
+              <li>— Weekly and monthly rates available</li>
             </ul>
-            <div class="mt-6 flex flex-wrap gap-3">
-              <a href="#book" class="rounded-full bg-gold px-5 py-2 text-sm font-semibold text-ink hover:bg-white transition">Request Dates</a>
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a href="#book" class="border border-white bg-white px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-black transition hover:bg-transparent hover:text-white">Request Dates</a>
               <!-- TODO-TURO-URL-2: paste your live Turo listing link below -->
-              <a href="#" class="rounded-full border border-line px-5 py-2 text-sm text-white hover:border-gold hover:text-gold transition">Instant-book on Turo →</a>
+              <a href="#" class="border border-line px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition hover:border-white">Instant-Book on Turo</a>
             </div>
           </div>
         </article>
 
       </div>
 
-      <p class="mt-6 text-xs text-fog">
-        Short trips book fastest through our Turo listings (insurance included through the platform).
-        For weekly, monthly, and corporate rentals, request direct — better rates, same trucks.
+      <p class="mt-8 text-xs text-fog">
+        Short trips book fastest through our Turo listings — insurance included through the platform.
+        For weekly, monthly, and corporate terms, book direct. Better rates. Same trucks.
       </p>
     </div>
   </section>
 
   <!-- ============ DIRECT / MONTHLY / CORPORATE ============ -->
   <section id="direct" class="border-t border-line bg-panel">
-    <div class="mx-auto max-w-6xl px-5 py-20">
+    <div class="mx-auto max-w-6xl px-5 py-24">
       <div class="grid items-start gap-12 md:grid-cols-2">
         <div>
-          <p class="text-xs uppercase tracking-[0.3em] text-gold">Monthly &amp; Corporate</p>
-          <h2 class="mt-2 font-display text-3xl text-white md:text-4xl">In town for a while?<br />Rent direct and save.</h2>
-          <p class="mt-5 text-fog">
+          <p class="text-[10px] font-semibold uppercase tracking-xo text-fog">Monthly &amp; Corporate</p>
+          <h2 class="mt-3 text-3xl font-black uppercase tracking-tight text-white md:text-5xl">In town<br />for a while?</h2>
+          <p class="mt-6 text-fog">
             Consultants, relocations, extended stays, visiting executives — skip the rental counter
             and the platform fees. Book direct with the owners for weekly and monthly terms,
-            with delivery and a single point of contact the entire time.
+            with delivery and one point of contact the entire time.
           </p>
-          <ul class="mt-6 space-y-3 text-sm text-gray-300">
-            <li class="flex gap-3"><span class="text-gold">✓</span> Weekly &amp; monthly rates below daily pricing</li>
-            <li class="flex gap-3"><span class="text-gold">✓</span> Delivered to IAD, DCA, Tysons hotels, or your office</li>
-            <li class="flex gap-3"><span class="text-gold">✓</span> Simple written rental agreement, transparent deposit</li>
-            <li class="flex gap-3"><span class="text-gold">✓</span> Corporate invoicing available for business rentals</li>
+          <ul class="mt-7 space-y-3 text-sm text-gray-300">
+            <li class="flex gap-3"><span class="font-bold text-white">—</span> Weekly &amp; monthly rates below daily pricing</li>
+            <li class="flex gap-3"><span class="font-bold text-white">—</span> Delivered to IAD, DCA, Tysons hotels, or your office</li>
+            <li class="flex gap-3"><span class="font-bold text-white">—</span> Plain-English rental agreement, transparent deposit</li>
+            <li class="flex gap-3"><span class="font-bold text-white">—</span> Corporate invoicing available</li>
           </ul>
         </div>
-        <div class="rounded-2xl border border-line bg-ink p-8">
-          <h3 class="font-display text-xl text-white">Renter requirements</h3>
+        <div class="border border-line bg-ink p-8">
+          <h3 class="text-lg font-black uppercase tracking-tight text-white">Renter requirements</h3>
           <p class="mt-2 text-sm text-fog">We keep it simple, but we do verify. Every direct rental requires:</p>
-          <ul class="mt-4 space-y-3 text-sm text-gray-300">
-            <li class="flex gap-3"><span class="text-gold">1.</span> Valid driver's license, age 25+</li>
-            <li class="flex gap-3"><span class="text-gold">2.</span> Proof of personal auto insurance that extends to rentals</li>
-            <li class="flex gap-3"><span class="text-gold">3.</span> Signed rental agreement before keys</li>
-            <li class="flex gap-3"><span class="text-gold">4.</span> Refundable security deposit (card hold)</li>
+          <ul class="mt-5 space-y-3 text-sm text-gray-300">
+            <li class="flex gap-3"><span class="font-bold text-white">01</span> Valid driver's license, age 25+</li>
+            <li class="flex gap-3"><span class="font-bold text-white">02</span> Proof of personal auto insurance that extends to rentals</li>
+            <li class="flex gap-3"><span class="font-bold text-white">03</span> Signed rental agreement before keys</li>
+            <li class="flex gap-3"><span class="font-bold text-white">04</span> Refundable security deposit (card hold)</li>
           </ul>
-          <p class="mt-5 text-xs text-fog">
-            These protect both of us — and they're why our trucks stay in the condition you're renting them for.
+          <p class="mt-6 text-xs text-fog">
+            These protect both of us — and they're why the trucks stay in the condition you're renting them for.
           </p>
         </div>
       </div>
@@ -204,24 +212,24 @@
 
   <!-- ============ HOW IT WORKS ============ -->
   <section id="how" class="border-t border-line bg-ink">
-    <div class="mx-auto max-w-6xl px-5 py-20">
-      <p class="text-xs uppercase tracking-[0.3em] text-gold">How It Works</p>
-      <h2 class="mt-2 font-display text-3xl text-white md:text-4xl">Three steps to the driver's seat.</h2>
-      <div class="mt-10 grid gap-6 md:grid-cols-3">
-        <div class="rounded-2xl border border-line bg-panel p-6">
-          <div class="font-display text-3xl text-gold">1</div>
-          <h3 class="mt-3 text-lg font-semibold text-white">Request your dates</h3>
-          <p class="mt-2 text-sm text-fog">Tell us the vehicle, dates, and where you want it delivered. We reply fast — usually within the hour.</p>
+    <div class="mx-auto max-w-6xl px-5 py-24">
+      <p class="text-[10px] font-semibold uppercase tracking-xo text-fog">How It Works</p>
+      <h2 class="mt-3 text-3xl font-black uppercase tracking-tight text-white md:text-5xl">Three steps to the keys.</h2>
+      <div class="mt-12 grid gap-px border border-line bg-line md:grid-cols-3">
+        <div class="bg-panel p-8">
+          <div class="text-4xl font-black text-white/20">01</div>
+          <h3 class="mt-4 text-base font-black uppercase tracking-tight text-white">Request your dates</h3>
+          <p class="mt-3 text-sm text-fog">Vehicle, dates, delivery spot. We reply fast — usually within the hour.</p>
         </div>
-        <div class="rounded-2xl border border-line bg-panel p-6">
-          <div class="font-display text-3xl text-gold">2</div>
-          <h3 class="mt-3 text-lg font-semibold text-white">Verify &amp; sign</h3>
-          <p class="mt-2 text-sm text-fog">License, insurance, deposit, and a plain-English rental agreement — all handled electronically before pickup.</p>
+        <div class="bg-panel p-8">
+          <div class="text-4xl font-black text-white/20">02</div>
+          <h3 class="mt-4 text-base font-black uppercase tracking-tight text-white">Verify &amp; sign</h3>
+          <p class="mt-3 text-sm text-fog">License, insurance, deposit, agreement — all handled electronically before pickup.</p>
         </div>
-        <div class="rounded-2xl border border-line bg-panel p-6">
-          <div class="font-display text-3xl text-gold">3</div>
-          <h3 class="mt-3 text-lg font-semibold text-white">We deliver. You drive.</h3>
-          <p class="mt-2 text-sm text-fog">Photo walkaround together at handoff, full tank, one text away for anything during your rental.</p>
+        <div class="bg-panel p-8">
+          <div class="text-4xl font-black text-white/20">03</div>
+          <h3 class="mt-4 text-base font-black uppercase tracking-tight text-white">We deliver. You drive.</h3>
+          <p class="mt-3 text-sm text-fog">Photo walkaround together at handoff, full tank, one text away the whole rental.</p>
         </div>
       </div>
     </div>
@@ -229,43 +237,43 @@
 
   <!-- ============ BOOKING FORM ============ -->
   <section id="book" class="border-t border-line bg-panel">
-    <div class="mx-auto max-w-3xl px-5 py-20">
-      <p class="text-center text-xs uppercase tracking-[0.3em] text-gold">Request a Vehicle</p>
-      <h2 class="mt-2 text-center font-display text-3xl text-white md:text-4xl">Tell us what you need.</h2>
-      <p class="mt-3 text-center text-sm text-fog">No payment now — this is a request, not a charge. We'll confirm availability and total price by text or email.</p>
+    <div class="mx-auto max-w-3xl px-5 py-24">
+      <p class="text-center text-[10px] font-semibold uppercase tracking-xo text-fog">Request a Vehicle</p>
+      <h2 class="mt-3 text-center text-3xl font-black uppercase tracking-tight text-white md:text-5xl">Tell us what you need.</h2>
+      <p class="mt-4 text-center text-sm text-fog">No payment now — this is a request, not a charge. We confirm availability and total price by text or email.</p>
 
       <!-- TODO-FORMSPREE: create a free form at formspree.io and replace YOUR_FORM_ID below.
            Until then the form falls back to opening an email draft. -->
       <form id="bookingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
-            class="mt-10 grid gap-5 rounded-2xl border border-line bg-ink p-8 md:grid-cols-2">
+            class="mt-12 grid gap-5 border border-line bg-ink p-8 md:grid-cols-2">
         <div class="md:col-span-1">
-          <label class="mb-1 block text-sm text-fog" for="name">Full name</label>
+          <label class="mb-2 block text-[10px] font-semibold uppercase tracking-[0.2em] text-fog" for="name">Full name</label>
           <input required id="name" name="name" type="text"
-                 class="w-full rounded-lg border border-line bg-panel px-4 py-3 text-white placeholder-fog/50 focus:border-gold focus:outline-none" placeholder="Jordan Smith" />
+                 class="w-full border border-line bg-panel px-4 py-3 text-white placeholder-fog/40 focus:border-white focus:outline-none" placeholder="Jordan Smith" />
         </div>
         <div class="md:col-span-1">
-          <label class="mb-1 block text-sm text-fog" for="phone">Phone</label>
+          <label class="mb-2 block text-[10px] font-semibold uppercase tracking-[0.2em] text-fog" for="phone">Phone</label>
           <input required id="phone" name="phone" type="tel"
-                 class="w-full rounded-lg border border-line bg-panel px-4 py-3 text-white placeholder-fog/50 focus:border-gold focus:outline-none" placeholder="(703) 555-0100" />
+                 class="w-full border border-line bg-panel px-4 py-3 text-white placeholder-fog/40 focus:border-white focus:outline-none" placeholder="(703) 555-0100" />
         </div>
         <div class="md:col-span-2">
-          <label class="mb-1 block text-sm text-fog" for="email">Email</label>
+          <label class="mb-2 block text-[10px] font-semibold uppercase tracking-[0.2em] text-fog" for="email">Email</label>
           <input required id="email" name="email" type="email"
-                 class="w-full rounded-lg border border-line bg-panel px-4 py-3 text-white placeholder-fog/50 focus:border-gold focus:outline-none" placeholder="you@email.com" />
+                 class="w-full border border-line bg-panel px-4 py-3 text-white placeholder-fog/40 focus:border-white focus:outline-none" placeholder="you@email.com" />
         </div>
         <div class="md:col-span-1">
-          <label class="mb-1 block text-sm text-fog" for="vehicle">Vehicle</label>
+          <label class="mb-2 block text-[10px] font-semibold uppercase tracking-[0.2em] text-fog" for="vehicle">Vehicle</label>
           <select id="vehicle" name="vehicle"
-                  class="w-full rounded-lg border border-line bg-panel px-4 py-3 text-white focus:border-gold focus:outline-none">
+                  class="w-full border border-line bg-panel px-4 py-3 text-white focus:border-white focus:outline-none">
             <option>Cadillac Escalade</option>
             <option>Mercedes-Benz GLE 350</option>
             <option>Either / best available</option>
           </select>
         </div>
         <div class="md:col-span-1">
-          <label class="mb-1 block text-sm text-fog" for="delivery">Pickup / delivery</label>
+          <label class="mb-2 block text-[10px] font-semibold uppercase tracking-[0.2em] text-fog" for="delivery">Pickup / delivery</label>
           <select id="delivery" name="delivery"
-                  class="w-full rounded-lg border border-line bg-panel px-4 py-3 text-white focus:border-gold focus:outline-none">
+                  class="w-full border border-line bg-panel px-4 py-3 text-white focus:border-white focus:outline-none">
             <option>Tysons (our location)</option>
             <option>Dulles Airport (IAD)</option>
             <option>Reagan National (DCA)</option>
@@ -273,27 +281,27 @@
           </select>
         </div>
         <div class="md:col-span-1">
-          <label class="mb-1 block text-sm text-fog" for="start">Start date</label>
+          <label class="mb-2 block text-[10px] font-semibold uppercase tracking-[0.2em] text-fog" for="start">Start date</label>
           <input required id="start" name="start_date" type="date"
-                 class="w-full rounded-lg border border-line bg-panel px-4 py-3 text-white focus:border-gold focus:outline-none" />
+                 class="w-full border border-line bg-panel px-4 py-3 text-white focus:border-white focus:outline-none" />
         </div>
         <div class="md:col-span-1">
-          <label class="mb-1 block text-sm text-fog" for="end">End date</label>
+          <label class="mb-2 block text-[10px] font-semibold uppercase tracking-[0.2em] text-fog" for="end">End date</label>
           <input required id="end" name="end_date" type="date"
-                 class="w-full rounded-lg border border-line bg-panel px-4 py-3 text-white focus:border-gold focus:outline-none" />
+                 class="w-full border border-line bg-panel px-4 py-3 text-white focus:border-white focus:outline-none" />
         </div>
         <div class="md:col-span-2">
-          <label class="mb-1 block text-sm text-fog" for="notes">Anything else?</label>
+          <label class="mb-2 block text-[10px] font-semibold uppercase tracking-[0.2em] text-fog" for="notes">Anything else?</label>
           <textarea id="notes" name="notes" rows="3"
-                    class="w-full rounded-lg border border-line bg-panel px-4 py-3 text-white placeholder-fog/50 focus:border-gold focus:outline-none"
+                    class="w-full border border-line bg-panel px-4 py-3 text-white placeholder-fog/40 focus:border-white focus:outline-none"
                     placeholder="Corporate rental, monthly term, delivery details, questions…"></textarea>
         </div>
         <div class="md:col-span-2">
           <button type="submit"
-                  class="w-full rounded-full bg-gold px-8 py-4 font-semibold text-ink transition hover:bg-white">
+                  class="w-full border border-white bg-white px-8 py-4 text-xs font-bold uppercase tracking-[0.25em] text-black transition hover:bg-transparent hover:text-white">
             Send Request
           </button>
-          <p id="formNote" class="mt-3 text-center text-xs text-fog">We typically respond within the hour, 8am–10pm.</p>
+          <p id="formNote" class="mt-4 text-center text-xs text-fog">We typically respond within the hour, 8am–10pm.</p>
         </div>
       </form>
     </div>
@@ -301,28 +309,28 @@
 
   <!-- ============ FAQ ============ -->
   <section id="faq" class="border-t border-line bg-ink">
-    <div class="mx-auto max-w-3xl px-5 py-20">
-      <p class="text-xs uppercase tracking-[0.3em] text-gold">FAQ</p>
-      <h2 class="mt-2 font-display text-3xl text-white">Quick answers.</h2>
-      <div class="mt-8 space-y-4">
-        <details class="rounded-xl border border-line bg-panel p-5">
-          <summary class="cursor-pointer font-semibold text-white">Is insurance included?</summary>
-          <p class="mt-3 text-sm text-fog">Trips booked through our Turo listings include Turo's protection plans. Direct weekly/monthly rentals require proof that your own auto policy extends to rental vehicles (most do) — we verify this before pickup, for both of our protection.</p>
+    <div class="mx-auto max-w-3xl px-5 py-24">
+      <p class="text-[10px] font-semibold uppercase tracking-xo text-fog">FAQ</p>
+      <h2 class="mt-3 text-3xl font-black uppercase tracking-tight text-white md:text-5xl">Quick answers.</h2>
+      <div class="mt-10 space-y-px border border-line bg-line">
+        <details class="bg-panel p-6">
+          <summary class="cursor-pointer text-sm font-bold uppercase tracking-[0.15em] text-white">Is insurance included?</summary>
+          <p class="mt-3 text-sm text-fog">Trips booked through our Turo listings include Turo's protection plans. Direct weekly/monthly rentals require proof that your own auto policy extends to rental vehicles (most do) — we verify before pickup, for both of our protection.</p>
         </details>
-        <details class="rounded-xl border border-line bg-panel p-5">
-          <summary class="cursor-pointer font-semibold text-white">Do you deliver to the airports?</summary>
+        <details class="bg-panel p-6">
+          <summary class="cursor-pointer text-sm font-bold uppercase tracking-[0.15em] text-white">Do you deliver to the airports?</summary>
           <p class="mt-3 text-sm text-fog">Yes — Dulles (IAD) and Reagan National (DCA), plus hotels, offices, and Metro stations across the DC metro. Delivery fees depend on location.</p>
         </details>
-        <details class="rounded-xl border border-line bg-panel p-5">
-          <summary class="cursor-pointer font-semibold text-white">What's the security deposit?</summary>
-          <p class="mt-3 text-sm text-fog">A refundable card hold, released after the vehicle is returned in the condition it left. Amount depends on vehicle and rental length — stated clearly in your quote before you commit to anything.</p>
+        <details class="bg-panel p-6">
+          <summary class="cursor-pointer text-sm font-bold uppercase tracking-[0.15em] text-white">What's the security deposit?</summary>
+          <p class="mt-3 text-sm text-fog">A refundable card hold, released after the vehicle comes back in the condition it left. Amount depends on vehicle and rental length — stated clearly in your quote before you commit to anything.</p>
         </details>
-        <details class="rounded-xl border border-line bg-panel p-5">
-          <summary class="cursor-pointer font-semibold text-white">Is there a mileage limit?</summary>
-          <p class="mt-3 text-sm text-fog">Generous daily allowances are included, with a simple per-mile rate beyond that — all in writing in your agreement, no surprises.</p>
+        <details class="bg-panel p-6">
+          <summary class="cursor-pointer text-sm font-bold uppercase tracking-[0.15em] text-white">Is there a mileage limit?</summary>
+          <p class="mt-3 text-sm text-fog">Generous daily allowances are included, with a simple per-mile rate beyond that — all in writing in your agreement. No surprises.</p>
         </details>
-        <details class="rounded-xl border border-line bg-panel p-5">
-          <summary class="cursor-pointer font-semibold text-white">Do you offer chauffeured service?</summary>
+        <details class="bg-panel p-6">
+          <summary class="cursor-pointer text-sm font-bold uppercase tracking-[0.15em] text-white">Do you offer chauffeured service?</summary>
           <p class="mt-3 text-sm text-fog">Not currently — all rentals are self-drive. If that changes, it will be announced here first.</p>
         </details>
       </div>
@@ -331,22 +339,25 @@
 
   <!-- ============ FOOTER ============ -->
   <footer class="border-t border-line bg-panel">
-    <div class="mx-auto max-w-6xl px-5 py-12">
-      <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+    <div class="mx-auto max-w-6xl px-5 py-14">
+      <div class="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
         <div>
-          <p class="font-display text-lg text-white">Capital <span class="text-gold">Drive</span> Co.</p>
-          <p class="mt-1 text-sm text-fog">Tysons, Virginia · Serving the DC Metro</p>
+          <p class="flex items-baseline gap-3">
+            <span class="text-3xl font-black tracking-tight text-white">XO</span>
+            <span class="text-[10px] font-semibold uppercase tracking-xo text-fog">Luxury Rentals</span>
+          </p>
+          <p class="mt-2 text-sm text-fog">Tysons, Virginia — Serving the DC Metro</p>
         </div>
         <div class="text-sm text-fog">
           <!-- TODO-PHONE / TODO-EMAIL: replace with real contact info -->
-          <p>📞 (703) 555-0100</p>
-          <p>✉️ rentals@example.com</p>
+          <p class="uppercase tracking-[0.15em]">T — (703) 555-0100</p>
+          <p class="uppercase tracking-[0.15em]">E — rentals@example.com</p>
         </div>
       </div>
-      <p class="mt-8 text-xs leading-relaxed text-fog/70">
+      <p class="mt-10 text-xs leading-relaxed text-fog/60">
         All vehicles are offered as self-drive rentals only and are subject to a written rental agreement,
         driver verification, proof of insurance, and a refundable security deposit. Availability is not guaranteed
-        until confirmed in writing. © 2026 Capital Drive Co. <!-- TODO: replace with your LLC's legal name -->
+        until confirmed in writing. © 2026 XO Luxury Rentals. <!-- TODO: add your LLC's legal name -->
       </p>
     </div>
   </footer>
@@ -362,7 +373,7 @@
         e.preventDefault();
         const f = e.target;
         const body = encodeURIComponent(
-          `Rental request\n\nName: ${f.name.value}\nPhone: ${f.phone.value}\nEmail: ${f.email.value}\nVehicle: ${f.vehicle.value}\nDelivery: ${f.delivery.value}\nDates: ${f.start_date.value} to ${f.end_date.value}\nNotes: ${f.notes.value}`
+          `XO Luxury Rentals — rental request\n\nName: ${f.name.value}\nPhone: ${f.phone.value}\nEmail: ${f.email.value}\nVehicle: ${f.vehicle.value}\nDelivery: ${f.delivery.value}\nDates: ${f.start_date.value} to ${f.end_date.value}\nNotes: ${f.notes.value}`
         );
         window.location.href = `mailto:${OWNER_EMAIL}?subject=${encodeURIComponent('Rental request — ' + f.vehicle.value)}&body=${body}`;
         document.getElementById('formNote').textContent = 'Opening your email app to send the request…';
